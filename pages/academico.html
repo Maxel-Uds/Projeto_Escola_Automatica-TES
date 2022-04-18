@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Cadastro Acadêmico</title>
 </head>
 <body>
-    <h1>Cadastro Acadêmico do Aluno – notas, faltas, matérias</h1>
-    <h2>Insira as informações acdêmicas:</h2>
-
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Escola</label>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="aluno.html">Alunos</a></li>
+            <li><a href="responsavel.html">Responsáveis</a></li>
+            <li><a href="secretaria.html">Secretaria</a></li>
+            <li><a href="atividades.html">Atividades Complementares</a></li>
+            <li><a class="active" href="academico.html">Acadêmico</a></li>
+            <li><a href="professor.html">Relatórios</a></li>
+        </ul>
+    </nav>
+<div class="formDiv">
+    <h1>Acadêmico</h1>
+    <br>
+    <h2>Insira as informações acadêmicas:</h2>
     <form action="validar.php" method="post">
         <p>
             <label for="academico">Notas:</label><br>
@@ -26,8 +43,9 @@
         </p>
 
         <p>
-            <button type="submit" name="academico">Login</button>
+            <button type="submit" name="academico">LOGIN</button>
         </p>
     </form>
+</div>
 </body>
 </html>
