@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Cadastro de Atividades Complementares</title>
+</head>
+<body>
+  <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">Escola</label>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="aluno.html">Aluno</a></li>
+        <li><a href="../usuarios/secretaria.html">Secretaria</a></li>
+        <li><a href="academico.html">Acadêmico</a></li>
+        <li><a href="professor.html">Relatórios</a></li>
+      </ul>
+    </nav>
+<div class="formDiv">
+  <h1>Atividades Complementares</h1>
+  <br>
+  <h2>Insira a Atividade Complementar</h2>
+
+  <form action="validar.php" method="post">
+    <p>
+        <label for="atividade">Nome da atividade complementar:</label><br>
+        <input type="text" name="atividade" required>
+    </p>
+
+    <p>
+        <button type="submit" name="atividade">LOGIN</button>
+    </p>
+  </form>
+</div>
+</body>
+</html>
