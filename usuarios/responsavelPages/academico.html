@@ -20,31 +20,15 @@
         </ul>
     </nav>
 
-    <form class="formAcademico" action="" method="post">
-      <p>
-          <label for="nomeAluno">Digite o RA do Aluno:</label><br>
+    <form class="form" action="" method="post">
+
+      <fieldset>
+        <legend>Informações acadêmicas do aluno</legend>
+        <div>
+          <label for="nomeAluno">Digite o RA do aluno para buscar dados:</label><br>
           <input type="text" name="nomeAluno" required size="45px">
-      </p>
-
-      <!-- <p>
-          <label for="aluno">Provas:</label><br>
-          <input type="text" name="aluno" required>
-      </p>
-      <p>
-          <label for="aluno">Notas:</label><br>
-          <input type="text" name="aluno" required>
-      </p>
-
-      <p>
-        <label for="aluno">Atividades Extras:</label><br>
-        <input type="text" name="aluno" required>
-        </p>
-
-        <p>
-            <label for="aluno">Faltas:</label><br>
-            <input type="text" name="aluno" required>
-        </p> -->
-
+        </div>
+      </fieldset>
       <p>
           <input class="button" type="submit" name="responsavel" value="Buscar">
       </p>
