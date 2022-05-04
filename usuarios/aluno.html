@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Cadastro Aluno</title>
+    <link rel="stylesheet" href="../css/aluno.css">
+    <title>Aluno</title>
 </head>
 <body>
   <nav>
@@ -20,38 +21,42 @@
       </ul>
     </nav>
 
-<div class="center alunoDiv">
-  <ul class="center">
-      <li >
-        <a class="center" href="../sistema/academico.html">Consulta de agenda de provas, aulas e atividades extras</a>
-      </li>
 
+<div class="center">
+
+  <div class="alunoDiv">
+    <h1 class="title">Área do Aluno</h1>
+    <ul class="center">
+        <li >
+          <a class="center alunoAncor" href="alunoPages/academicoAluno.html">Consute sua agenda de provas, aulas e atividades extras</a>
+        </li>
+
+        <br>
+
+        <li>
+          <a class="center alunoAncor" href="alunoPages/atividadesExtras.html">Se matrícule em atividades extras</a>
+        </li>
+    </ul>
+
+    <br>
+  </div>
+
+  <div class="alunoDiv">
+    <h2>Dúvidas?...
       <br>
-
-      <li>
-        <a class="center" href="../sistema/atividades.html">Consulta de agenda de provas, aulas e atividades extras</a>
-      </li>
-  </ul>
-
-  <br>
-
-  <div class="center alunoDiv">
-    <h2>Insira o nome do aluno a ser cadastrado</h2>
-    <form action="validar.php" method="post">
+      Entre em contato com o professor
+    </h2>
+    <form action="mensagem.php" method="post">
       <p>
-          <label for="aluno">Nome do aluno:</label><br>
-          <input type="text" name="aluno" required>
+          <label for="aluno">Digite sua mensagem:</label><br>
+          <textarea type="text" name="aluno" rows="10" cols="70" required></textarea>
       </p>
       <p> 
-          <button type="submit" name="aluno">LOGIN</button>
+          <button type="submit" name="aluno">Matricular</button>
       </p>
     </form>
   </div>
 
-</div>
-
-<div>
-  <p>cuasdasdasd</p>
 </div>
 
 </body>

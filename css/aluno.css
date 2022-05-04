@@ -1,0 +1,44 @@
+.title {
+    padding: 40px;
+    font-family: montserrat;
+    font-size: 35px;
+}
+
+.alunoAncor {
+    color: black;
+    font-size: 25px;
+}
+
+.alunoAncor:hover  {
+    background-color: white;
+    text-decoration: underline;
+}
+
+.formAcademico, .formConteudo, .formContas {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.alunoDiv{
+    margin-top: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+form{
+    margin-top: 30px;
+}
+
+.button {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 10%;
+    padding: 2px;
+}
+
+input{
+    margin-top: 10px;
+    width: 300px;
+}
