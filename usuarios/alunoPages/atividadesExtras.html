@@ -21,13 +21,17 @@
     </nav>
 
     <form class="formAcademico" action="" method="post">
-      <p>
-          <label for="nomeAluno">Digite o nome da atividade extra a se matricular:</label><br>
+      <h2>
+        <label for="nomeAluno">Digite seu RA:</label><br>
+        <input type="text" name="raAluno" required ">
+      </h2>  
+      <h2>
+          <label for="nomeAluno">Digite o nome da atividade extra na qual você deseja se matricular:</label><br>
           <input type="text" name="atividadeAluno" required ">
-      </p>
+      </h2>
 
       <p>
-          <input class="button" type="submit" name="atividade" value="Buscar">
+          <input class="button" type="submit" name="atividade" value="Matricular">
       </p>
     </form>
 </body>
