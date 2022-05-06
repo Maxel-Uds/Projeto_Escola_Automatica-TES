@@ -4,8 +4,11 @@
     font-size: 35px;
 }
 
-div {
+.respDiv {
     text-align: center;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    margin: 25px;
 }
 
 ul li {
