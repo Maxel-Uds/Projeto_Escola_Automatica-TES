@@ -5,30 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Cadastro Responsável</title>
+    <link rel="stylesheet" href="../css/financeiro.css">
+    <title>Gerar Boleto de Atividades</title>
 </head>
 <body>
   <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">Escola</label>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a class="active" href="financeiro.html">Financeiro</a></li>
-      </ul>
-    </nav>
-<div class="formDiv">
-  <h1>Área Financeiro</h1>
-  <br>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">Escola</label>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a class="active" href="financeiro.html">Financeiro</a></li>
+    </ul>
+  </nav>
 
-
+  <form class="form" action="" method="post"> 
+    <fieldset>
+      <legend>Gerar boleto com o valor das atividades extras de alunos</legend>
+      <div>
+        <label for="ra">Digite o RA do aluno para gerar boleto de atividades extras:</label>
+        <input type="text" name="ra" required size="45px">
+      </div>
+    </fieldset>
 
     <p>
-        <input type="submit" name="responsavel">
+      <input type="submit" class="button" name="gerar" value="Gerar Boleto">
     </p>
   </form>
-</div>
 </body>
 </html>
