@@ -87,16 +87,31 @@ function createTable(tabela) {
 
 function calcularBoleto(atividades) {
     var total = document.createElement("p")
-    total.id = "total";
+    var div = document.createElement("div");
     var soma = 0;
+
+    div.id = "dadosBoleto";
 
     atividades.forEach(atividade => {
         soma += (atividade["preco"] * atividade["cargaHoraria"]);
     });
 
-    total.textContent = `Valor total: R$ ${soma}`
-    boleto.appendChild(total); 
+    total.textContent = `Valor total: R$ ${soma}`;
+
+    div.appendChild(total);
+    
+    getVencimento(div);
 }
+
+function getVencimento(div) {
+    var vencimento = document.createElement("p");
+    var date = new Date();
+
+    vencimento.textContent = `Vencimento: ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
+
+    div.appendChild(vencimento);
+    boleto.appendChild(div);
+};
 
 function checkValue() {
     var ru = input.value;
