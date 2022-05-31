@@ -105,9 +105,10 @@ function calcularBoleto(atividades) {
 
 function getVencimento(div) {
     var vencimento = document.createElement("p");
-    var date = new Date();
+    var date = new Date(Date.now());
 
-    vencimento.textContent = `Vencimento: ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`;
+    date.setDate(date.getDate() + 2)
+    vencimento.textContent = `Vencimento: ${date.toLocaleDateString()}`;
 
     div.appendChild(vencimento);
     boleto.appendChild(div);
