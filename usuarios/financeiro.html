@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/financeiro.css">
+    <script type="text/javascript" src="../js/financeiro.js" defer="defer"></script>
     <title>Gerar Boleto de Atividades</title>
 </head>
 <body>
@@ -21,18 +22,20 @@
     </ul>
   </nav>
 
-  <form class="form" action="" method="post"> 
+  <form class="form"> 
     <fieldset>
       <legend>Gerar boleto com o valor das atividades extras de alunos</legend>
       <div>
         <label for="ra">Digite o RA do aluno para gerar boleto de atividades extras:</label>
-        <input type="text" name="ra" required size="45px">
+        <input type="number" name="ra" required size="45px" id="ra" min="1">
       </div>
     </fieldset>
 
     <p>
-      <input type="submit" class="button" name="gerar" value="Gerar Boleto">
+      <input type="submit" class="button" id="button" onclick="getContas()">
     </p>
   </form>
+
+  <div id="boleto"></div>
 </body>
 </html>
