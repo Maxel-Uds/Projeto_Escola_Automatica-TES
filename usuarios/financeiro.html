@@ -27,12 +27,12 @@
       <legend>Gerar boleto com o valor das atividades extras de alunos</legend>
       <div>
         <label for="ra">Digite o RA do aluno para gerar boleto de atividades extras:</label>
-        <input type="number" name="ra" required size="45px" id="ra" min="1">
+        <input type="number" name="ra" required size="45px" id="ra" min="1" onchange="checkValue()">
       </div>
     </fieldset>
 
     <p>
-      <input type="submit" class="button" id="button" onclick="getContas()">
+      <input type="submit" class="button" id="button" onclick="getContas()" disabled>
     </p>
   </form>
 

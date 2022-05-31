@@ -18,47 +18,56 @@ button.addEventListener("click", function(e) {
 });
 
 function getContas() {
+    boleto.innerText = "";
+    boleto.style = "border: 1px solid black;"
     var ru = input.value;
 
-    response.filter(aluno => aluno["ru"] == ru)
-        .flatMap(aluno => {
-            var registro = document.createElement('p');
-            registro.textContent = `Registro Acadêmico: ${aluno["ru"]}`
-            boleto.appendChild(registro);
+    var aluno = response.filter(aluno => aluno["ru"] == ru)[0];
 
-            var nome = document.createElement('p');
-            nome.textContent = `Nome do Aluno: ${aluno["nome"]}`
-            boleto.appendChild(nome);
+    if(aluno) {
+        var registro = document.createElement('p');
+        registro.textContent = `Registro Acadêmico: ${aluno["ru"]}`
+        boleto.appendChild(registro);
 
-            var rg = document.createElement('p');
-            rg.textContent = `Documento: ${aluno["RG"]}`
-            boleto.appendChild(rg);
+        var nome = document.createElement('p');
+        nome.textContent = `Nome do Aluno: ${aluno["nome"]}`
+        boleto.appendChild(nome);
 
-            var tabela = document.createElement('table');
-            createTable(tabela);
+        var rg = document.createElement('p');
+        rg.textContent = `Documento: ${aluno["RG"]}`
+        boleto.appendChild(rg);
 
-            aluno["atividadeExtra"].forEach(atividade => {
-                var nomeAtv = atividade["nome"];
-                var precoAtv = `R$ ${atividade["preco"]}`;
-                var cargaAtv = `${atividade["cargaHoraria"]} H`;
+        var tabela = document.createElement('table');
+        createTable(tabela);
 
-                var linha = document.createElement('tr');
-                var atividade = document.createElement('td');
-                var preco = document.createElement('td');
-                var carga = document.createElement('td');
+        aluno["atividadeExtra"].forEach(atividade => {
+            var nomeAtv = atividade["nome"];
+            var precoAtv = `R$ ${atividade["preco"]}`;
+            var cargaAtv = `${atividade["cargaHoraria"]} H`;
+
+            var linha = document.createElement('tr');
+            var atividade = document.createElement('td');
+            var preco = document.createElement('td');
+            var carga = document.createElement('td');
                 
-                atividade.textContent = nomeAtv;
-                preco.textContent = precoAtv;
-                carga.textContent = cargaAtv;
+            atividade.textContent = nomeAtv;
+            preco.textContent = precoAtv;
+            carga.textContent = cargaAtv;
 
-                linha.appendChild(atividade);
-                linha.appendChild(preco);
-                linha.appendChild(carga);
-                tabela.appendChild(linha);
-            });
-
-            calcularBoleto(aluno["atividadeExtra"]);
+            linha.appendChild(atividade);
+            linha.appendChild(preco);
+            linha.appendChild(carga);
+            tabela.appendChild(linha);
         });
+
+        calcularBoleto(aluno["atividadeExtra"]);
+
+    } else {
+        var par = document.createElement("p");
+        par.id = "naoEncontrado";
+        par.textContent = `Nenhum aluno foi encontrado com o RA: ${ru}`;
+        boleto.appendChild(par);
+    }
 }
 
 function createTable(tabela) {
@@ -78,6 +87,7 @@ function createTable(tabela) {
 
 function calcularBoleto(atividades) {
     var total = document.createElement("p")
+    total.id = "total";
     var soma = 0;
 
     atividades.forEach(atividade => {
@@ -86,4 +96,14 @@ function calcularBoleto(atividades) {
 
     total.textContent = `Valor total: R$ ${soma}`
     boleto.appendChild(total); 
+}
+
+function checkValue() {
+    var ru = input.value;
+
+    if(!ru || ru < 1) {
+        button.setAttribute("disabled", "disabled");
+    } else {
+        button.removeAttribute("disabled");
+    }
 }

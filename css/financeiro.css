@@ -20,6 +20,28 @@
     padding: 2px;
 }
 
+#boleto {
+    /* text-align: center; */
+    margin-top: 10px;
+    padding: 20px;
+    width: 53%; 
+    margin-left: 25%;
+}
+
+#boleto p {
+    padding: 5px;
+    font-size: 20px;
+}
+
+#total {
+    margin-top: 30px;
+    color: red;
+}
+
+#naoEncontrado {
+    color: red;
+}
+
 table {
     border-collapse: collapse;
     width: 30%;
