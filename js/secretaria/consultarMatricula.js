@@ -19,7 +19,8 @@ button.addEventListener("click", function(e) {
 
 function getMatricula() {
     matricula.innerText = "";
-    matricula.style = "border: 1px solid black;"
+    matricula.style = "border: 1px solid black;";
+    
     var ru = input.value;
 
     var dado = response.filter(dado => dado["ru"] == ru)[0];

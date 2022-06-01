@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/secretaria.css">
+    <script src="../../js/secretaria/exportarNotas.js" defer="defer"></script>
     <title>Exportar Notas</title>
 </head>
 <body>
@@ -20,12 +21,12 @@
         </ul>
      </nav>
 
-    <form class="form" action="" method="post"> 
+    <form class="form"> 
         <fieldset class="exportar">
             <legend>Escolha a turma para exportar notas</legend>
             <div>
                 <label for="serie">Selecione um série: </label>
-                <select name="serie" required>
+                <select name="serie" required id="select">
                     <option value="1">1ª série</option>
                     <option value="2">2ª série</option>
                     <option value="3">3ª série</option>
@@ -42,16 +43,19 @@
         <fieldset class="turno">
             <legend>Escolha o turno da turma</legend>
             <div>
-                <input type="radio" name="turno" required value="manha">
-                <label for="rg">Manhã</label>
-                <input type="radio" name="turno" required value="tarde">
+                <input type="radio" name="turno" required value="1" checked>
+                <label for="turno">Manhã</label>
+                <input type="radio" name="turno" required value="2">
                 <label for="turno">Tarde</label>
             </div>
         </fieldset>
 
         <p>
-            <input class="button" type="submit" name="exportar" value="Exportar Notas">
+            <input id="button" type="submit" value="Exportar Notas" onclick="getNotas()">
         </p>
     </form>
+
+    <div id="notasTurma">
+    </div>
 </body>
 </html>
