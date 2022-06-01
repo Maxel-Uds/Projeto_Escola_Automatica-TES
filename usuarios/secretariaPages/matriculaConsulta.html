@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/secretaria.css">
+    <script src="../../js/secretaria/consultarMatricula.js" defer="defer"></script>
     <title>Consultar Matrículas</title>
 </head>
 <body>
@@ -20,18 +21,20 @@
         </ul>
      </nav>
 
-    <form class="form" action="" method="post"> 
+    <form class="form"> 
         <fieldset class="consulta">
             <legend>Consultar matrícula de um aluno (a)</legend>
             <div>
                 <label for="consulta">Digite o RA do aluno para consultar: </label>
-                <input type="number" name="consulta" size="30" required>
+                <input type="number" name="consulta" size="30" required min="1" id="ra" onchange="checkValue()">
             </div>
         </fieldset>
 
         <p>
-            <input class="button" type="submit" name="exportar" value="Consultar Matrícula">
+            <input class="button" id="button" type="submit" onclick="getMatricula()" disabled>
         </p>
     </form>
+
+    <div id="matricula"></div>
 </body>
 </html>
