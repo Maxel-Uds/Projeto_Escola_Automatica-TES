@@ -1,8 +1,8 @@
-var notas = document.getElementById('notasTurma');
+var frequenciaTurma = document.getElementById('frequenciaTurma');
 var checkbox = document.getElementsByName('turno');
 var select = document.getElementById('select');
 var button = document.getElementById("button");
-var requestURL = 'https://maxel-uds.github.io/JSON-Trabalho-TES/exportarNotas.json';
+var requestURL = 'https://maxel-uds.github.io/JSON-Trabalho-TES/exportarFrequencia.json';
 var request = new XMLHttpRequest();
 var response;
 
@@ -18,9 +18,9 @@ button.addEventListener("click", function(e) {
     e.preventDefault();
 });
 
-function getNotas() {
-    notas.innerText = "";
-    notas.style = "border: 1px solid black;";
+function getFrequencia() {
+    frequenciaTurma.innerText = "";
+    frequenciaTurma.style = "border: 1px solid black;";
 
     var serie = select.value;
     var turno = getTurnoId();
@@ -30,38 +30,38 @@ function getNotas() {
     if(turma) {
         var horario = document.createElement("p");
         horario.textContent = `Turno: ${turma["turno"]["nome"]}`;
-        notas.appendChild(horario);
+        frequenciaTurma.appendChild(horario);
 
         var ano = document.createElement("p");
         ano.textContent = `Série: ${turma["serie"]}ª série`;
-        notas.appendChild(ano);
+        frequenciaTurma.appendChild(ano);
 
         turma["alunos"].forEach(aluno => {
             var tabela = createTituloTabela(aluno);
 
             aluno["materias"].forEach(materia => {
                 var nomeMat = materia["nome"];
-                var notaMat = materia["nota"];
+                var faltasMat = materia["faltas"];
 
                 var linha = document.createElement('tr');
                 var nome = document.createElement('td');
-                var nota = document.createElement('td');
+                var faltas = document.createElement('td');
                         
                 nome.textContent = nomeMat;
-                nota.textContent = notaMat;
+                faltas.textContent = faltasMat;
 
                 linha.appendChild(nome);
-                linha.appendChild(nota);
+                linha.appendChild(faltas);
                 tabela.appendChild(linha);
             });
 
-            notas.appendChild(tabela);
+            frequenciaTurma.appendChild(tabela);
         });
     } else {
         var par = document.createElement("p");
         par.id = "naoEncontrado";
         par.textContent = `Nenhuma turma da ${serie}ª série foi encontrada no turno da ${turno == 1 ? "manhã" : "tarde"}`;
-        notas.appendChild(par);
+        frequenciaTurma.appendChild(par);
     }
 }
 
@@ -84,7 +84,7 @@ function createTituloTabela(aluno) {
     linha.appendChild(titulo)
     tabela.appendChild(linha);
 
-    tabela.className = "tabelaNotas";
+    tabela.className = "tabelaFrequencia";
 
     return createTable(tabela);
 }
@@ -92,13 +92,13 @@ function createTituloTabela(aluno) {
 function createTable(tabela) {
     var linha = document.createElement('tr');
     var nome = document.createElement('th');
-    var nota = document.createElement('th');
+    var faltas = document.createElement('th');
     
     nome.textContent = `Matéria`;
-    nota.textContent = `Nota`;
-    
+    faltas.textContent = `Faltas`;
+
     linha.appendChild(nome);
-    linha.appendChild(nota);
+    linha.appendChild(faltas);
     tabela.appendChild(linha);
     
     return tabela;
