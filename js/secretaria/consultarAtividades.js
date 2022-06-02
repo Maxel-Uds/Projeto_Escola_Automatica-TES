@@ -50,6 +50,7 @@ function createTituloTabela(professor) {
 
     titulo.colSpan = 2;
     titulo.textContent = `Professor ${professor["nome"]}`;
+    titulo.className = "titulo";
     
     linha.appendChild(titulo)
     tabela.appendChild(linha);

@@ -80,6 +80,7 @@ function createTituloTabela(aluno) {
 
     titulo.colSpan = 2;
     titulo.textContent = `${aluno["nome"]} - RA: ${aluno["ru"]}`;
+    titulo.className = "titulo";
     
     linha.appendChild(titulo)
     tabela.appendChild(linha);

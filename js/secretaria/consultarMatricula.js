@@ -107,6 +107,7 @@ function createTitulo(tabela) {
 
     titulo.colSpan = 2;
     titulo.textContent = "Atividades Matriculado (a)";
+    titulo.className = "titulo";
     
     linha.appendChild(titulo)
     tabela.appendChild(linha);
