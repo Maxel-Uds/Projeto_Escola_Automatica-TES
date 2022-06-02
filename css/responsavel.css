@@ -65,7 +65,7 @@ fieldset, legend {
 
 /* Estilo da página de consultar vida academica */
 
-#informacoes {
+#informacoes, #conteudos {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 15px;
@@ -116,4 +116,19 @@ table, th, td {
 #naoEncontrado {
     color: red;
     font-size: 20px;
+}
+
+/* Estilo da página de consulta de conteúdos */
+
+.tabelaConteudos {
+    font-size: 20px;
+}
+
+.tabelaConteudos p {
+    padding: 3px;
+}
+
+.tabelaConteudos td {
+    text-align: center;
+    vertical-align: middle;
 }
