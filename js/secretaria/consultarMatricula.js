@@ -11,6 +11,7 @@ request.send();
 
 request.onload = function() {
     response = request.response;
+    console.log(response);
 }
 
 button.addEventListener("click", function(e) {  

@@ -15,7 +15,7 @@ request.responseType = 'json';
 request.send();
 
 request.onload = function() {
-    response = request.response;
+    response = request.response[0];
 }
 
 button.addEventListener("click", function(e) {  
