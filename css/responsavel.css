@@ -132,3 +132,28 @@ table, th, td {
     text-align: center;
     vertical-align: middle;
 }
+
+/* Estilo página de contas a pagar */
+
+.ra {
+    margin-top: 10px;
+}
+
+#dadosBoleto {
+    margin-top: 20px;
+    color: red;
+}
+
+#boleto {
+    min-width: 350px;
+    margin-top: 10px;
+    padding: 20px;
+    width: 25%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#boleto p {
+    padding: 5px;
+    font-size: 20px;
+}
