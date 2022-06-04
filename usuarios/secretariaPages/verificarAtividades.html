@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/secretaria.css">
+    <script src="../../js/secretaria/consultarAtividades.js" defer="defer"></script>
     <title>Consultar Atividades</title>
 </head>
 <body>
@@ -20,25 +21,27 @@
         </ul>
      </nav>
 
-    <form class="form" action="" method="post"> 
+    <form class="form"> 
         <fieldset class="consulta">
             <legend>Escolha a atividade para buscar dados</legend>
-            <label for="consulta">Selecione a atividade extra desejada: </label>
-            <select>
-                <option value="mus">Música</option>
-                <option value="danca">Dança</option>
-                <option value="frances">Francês</option>
-                <option value="culi">Culinária</option>
-                <option value="comp">Computação</option>
-                <option value="nata">Natação</option>
-                <option value="fina">Educação Financeira</option>
-                <option value="gin">Ginástica</option>
+            <label for="atividade">Selecione a atividade extra desejada: </label>
+            <select name="atividade" id="select" required>
+                <option value="1">Música</option>
+                <option value="2">Dança</option>
+                <option value="3">Francês</option>
+                <option value="4">Culinária</option>
+                <option value="5">Computação</option>
+                <option value="6">Natação</option>
+                <option value="7">Educação Financeira</option>
+                <option value="8">Ginástica</option>
             </select>
         </fieldset>
 
         <p>
-            <input class="button" type="submit" name="consultar" value="Consultar Atividade">
+            <input id="button" type="submit" value="Consultar Atividade" onclick="getAtividadeExtra()">
         </p>
     </form>
+
+    <div id="atividadeExtra"></div>
 </body>
 </html>

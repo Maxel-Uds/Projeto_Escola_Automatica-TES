@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/responsavel.css">
+    <script src="../../js/responsavel/matricula.js" defer="defer"></script>
     <title>Matrícula</title>
 </head>
 <body>
@@ -20,38 +21,38 @@
         </ul>
     </nav>
 
-    <form class="form" class="matricula" action="" method="post"> 
+    <form class="form" class="matricula" id="form"> 
         <fieldset class="aluno">
             <legend>Informe os dados do aluno</legend>
             <div>
                 <label for="nome">Digite o nome completo do aluno:</label>
-                <input type="text" name="nome" required>
+                <input type="text" name="nome" required onchange="checkValue()" id="nomeAluno">
             </div>
 
             <div>
                 <label for="doc">Informe o documento do aluno:</label>
-                <input type="number" name="doc">
-                <input type="radio" name="tipo" required value="rg">
+                <input type="number" name="doc" onchange="checkValue()" id="docAluno">
+                <input type="radio" name="tipoDoc" required value="1" checked>
                 <label for="rg">RG</label>
-                <input type="radio" name="tipo" required value="cpf">
+                <input type="radio" name="tipoDoc" required value="2">
                 <label for="cpf">CPF</label>
             </div>
 
             <div>
                 <label for="idade">Informe a idade do aluno:</label>
-                <input type="date" name="idade" required>
+                <input type="date" name="idade" required onchange="checkValue()" id="idade">
             </div>
 
             <div>
                 <label for="nomeMae">Informe o nome da mãe:</label>
-                <input type="text" name="nomeMae" required><br>
+                <input type="text" name="nomeMae" required onchange="checkValue()" id="nomeMae"><br>
                 <label for="docMae">CPF da mãe:</label>
-                <input type="number" name="docMae" required>
+                <input type="number" name="docMae" required onchange="checkValue()" id="docMae">
             </div>
 
             <div>
                 <label for="sexo">Informe o sexo do aluno:</label>
-                <input type="radio" name="tipo" required value="F">
+                <input type="radio" name="tipo" required value="F" checked>
                 <label for="rg">F</label>
                 <input type="radio" name="tipo" required value="M">
                 <label for="cpf">M</label>
@@ -89,28 +90,30 @@
         <fieldset>
             <legend>Escolha atividades extras</legend>
             <div>
-                <input type="checkbox" value="mus">
+                <input type="checkbox" value="1">
                 <label>Música</label>
-                <input type="checkbox" value="danca">
+                <input type="checkbox" value="2">
                 <label>Dança</label>
-                <input type="checkbox" value="frances">
+                <input type="checkbox" value="3">
                 <label>Francês</label><br>
-                <input type="checkbox" value="culi">
+                <input type="checkbox" value="4">
                 <label>Culinária</label>
-                <input type="checkbox" value="comp">
+                <input type="checkbox" value="5">
                 <label>Computação</label>
-                <input type="checkbox" value="nata">
+                <input type="checkbox" value="6">
                 <label>Natação</label><br>
-                <input type="checkbox" value="fina">
+                <input type="checkbox" value="7">
                 <label>Educação Financeira</label>
-                <input type="checkbox" value="gin">
+                <input type="checkbox" value="8">
                 <label>Ginástica</label>
             </div>
         </fieldset>
 
         <p>
-          <input class="button" type="submit" name="responsavel" value="Matricular">
+          <input id="button" type="submit" value="Matricular" onclick="getMatriculaResponse()" disabled>
         </p>
     </form>
+
+    <div id="matriculaResponse"></div>
 </body>
 </html>

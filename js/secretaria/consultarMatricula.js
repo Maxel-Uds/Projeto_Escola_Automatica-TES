@@ -11,6 +11,7 @@ request.send();
 
 request.onload = function() {
     response = request.response;
+    console.log(response);
 }
 
 button.addEventListener("click", function(e) {  
@@ -19,7 +20,8 @@ button.addEventListener("click", function(e) {
 
 function getMatricula() {
     matricula.innerText = "";
-    matricula.style = "border: 1px solid black;"
+    matricula.style = "border: 1px solid black;";
+    
     var ru = input.value;
 
     var dado = response.filter(dado => dado["ru"] == ru)[0];
@@ -106,6 +108,7 @@ function createTitulo(tabela) {
 
     titulo.colSpan = 2;
     titulo.textContent = "Atividades Matriculado (a)";
+    titulo.className = "titulo";
     
     linha.appendChild(titulo)
     tabela.appendChild(linha);
