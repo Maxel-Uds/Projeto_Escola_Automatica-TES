@@ -25,14 +25,31 @@
         <label for="nomeAluno">Digite seu RA:</label><br>
         <input type="text" name="raAluno" required ">
       </h2>  
+      
       <h2>
-          <label for="nomeAluno">Digite o nome da atividade extra na qual você deseja se matricular:</label><br>
-          <input type="text" name="atividadeAluno" required ">
+          <form class="form" action="" method="post"> 
+            <fieldset class="consulta">
+                <label for="nomeAluno">Escolha a atividade extra na qual você deseja se matricular:</label><br>
+                <select>
+                    <option value="mus">Música</option>
+                    <option value="danca">Dança</option>
+                    <option value="frances">Francês</option>
+                    <option value="culi">Culinária</option>
+                    <option value="comp">Computação</option>
+                    <option value="nata">Natação</option>
+                    <option value="fina">Educação Financeira</option>
+                    <option value="gin">Ginástica</option>
+                </select>
+            </fieldset>
+
+            <p>
+              <input class="button" type="submit" name="atividade" value="Matricular">
+            </p>
+
+        </form>
       </h2>
 
-      <p>
-          <input class="button" type="submit" name="atividade" value="Matricular">
-      </p>
+
     </form>
 </body>
 </html>
