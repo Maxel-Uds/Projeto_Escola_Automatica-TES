@@ -11,6 +11,7 @@ request.send();
 
 request.onload = function() {
     response = request.response;
+    
 }
 
 button.addEventListener("click", function(e) {  
@@ -20,33 +21,48 @@ button.addEventListener("click", function(e) {
 function getProva() {
     prova.innerText = "";
     prova.style = "border: 1px solid black;"
-    var nome = input.value;
-    console.log(response)
+    var ru = input.value;
 
-    var dado = response.filter(dado => dado["nome"] == nome);
-    
+    var dado = response.filter(dado => dado["ru"] == ru)[0];
 
-
-    console.log(dado)
-
-    // var dataProvas = response.materias.forEach(element => {
-        
-    // });
-
-
-   
     if(dado) {
-        var datas = document.createElement('p');
-        datas.textContent = `Você tem provas nos dias: ${dado["proximaProva"]}`;
-
-
-        prova.appendChild(datas);
+        var tabela = document.createElement('table');
         
+        createTable(tabela);
 
+        dado["materias"].forEach(provas => {
+            var materiaProva = provas["nome"];
+            var proxProva = provas["proximaProva"];
+
+            var linha = document.createElement('tr');
+            var materia = document.createElement('td');
+            var data = document.createElement('td');
+
+            materia.textContent = materiaProva;
+            data.textContent = proxProva;
+
+            linha.appendChild(materia);
+            linha.appendChild(data);
+            tabela.appendChild(linha);
+        });   
     } else {
         var par = document.createElement("p");
         par.id = "naoEncontrado";
-        par.textContent = `Nenhum aluno foi encontrado com o nome: ${dado["nome"]}`;
+        par.textContent = `Nenhum aluno foi encontrado com o RA: ${dado["ru"]}`;
         prova.appendChild(par);
     }
 }
+
+function createTable(tabela) {
+    var linha = document.createElement('tr');
+    var materia = document.createElement('th');
+    var data = document.createElement('th');
+    materia.textContent = `Matéria`;
+    data.textContent = `Data`;
+    linha.appendChild(materia);
+    linha.appendChild(data);
+    tabela.appendChild(linha);
+    prova.appendChild(tabela);
+}
+
+

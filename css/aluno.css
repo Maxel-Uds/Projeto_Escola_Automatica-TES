@@ -28,14 +28,34 @@
     text-align: center;
   }
 
-form{
-    margin-top: 30px;
+
+.form {
+    margin-left: 37.5%;
+    margin-top: 20px;
 }
+
+.form fieldset {
+    margin-bottom: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 40%;
+}
+
+.form legend {
+    padding: 5px
+}
+
 
 .button {
     margin-top: 10px;
     font-size: 20px;
     width: 10%;
+    padding: 2px;
+}
+
+.buttonConsulta {
+    font-size: 25px;
+    width: 40%;
     padding: 2px;
 }
 
@@ -49,3 +69,51 @@ p{
     margin-bottom: 10px;
 }
 
+/* Estilo de página de consultas */
+
+#provas, #atividade, #aulas, #notasTurma, #frequenciaTurma, #atividadeExtra {
+    margin-top: 10px;
+    min-width: 400px;
+    width: 29%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#provas {
+    max-height: 515px;
+    min-height: 50px;
+    padding: 20px;
+}
+
+#provas p {
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 20px;
+    text-align: left;
+}
+
+td {
+    height: 20px;
+    vertical-align: bottom;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#naoEncontrado {
+    color: red;
+    font-size: 20px;
+}

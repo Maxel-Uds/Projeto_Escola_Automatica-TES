@@ -20,9 +20,9 @@ button.addEventListener("click", function(e) {
 function getAulas() {
     aulas.innerText = "";
     aulas.style = "border: 1px solid black;"
-    var nome = input.value;
+    var ru = input.value;
 
-    var dado = response.filter(dado => dado["nome"] == nome)[0];
+    var dado = response.filter(dado => dado["ru"] == ru)[0];
 
     if(dado) {
         var datas = document.createElement('p');
@@ -36,4 +36,16 @@ function getAulas() {
         par.textContent = `Nenhum aluno foi encontrado com o nome: ${dado["nome"]}`;
         aulas.appendChild(par);
     }
+}
+
+function createTable(tabela) {
+    var linha = document.createElement('tr');
+    var materia = document.createElement('th');
+    var data = document.createElement('th');
+    materia.textContent = `Matéria`;
+    data.textContent = `Data`;
+    linha.appendChild(materia);
+    linha.appendChild(data);
+    tabela.appendChild(linha);
+    prova.appendChild(tabela);
 }

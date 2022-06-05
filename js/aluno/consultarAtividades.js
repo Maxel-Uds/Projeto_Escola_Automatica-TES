@@ -20,22 +20,39 @@ button.addEventListener("click", function(e) {
 function getAtividades() {
     atividade.innerText = "";
     atividade.style = "border: 1px solid black;"
-    var nome = input.value;
+    var ru = input.value;
 
-    console.log(nome)
-
-    var dado = response.filter(dado => dado["nome"] == nome)[0];
+    var dado = response.filter(dado => dado["ru"] == ru)[0];
 
     if(dado) {
-        var atividades = document.createElement('p');
-        atividades.textContent = `Você está matriculado nas seguintes atividades: ${dado["atividadeExtra"]}`;
-        atividade.appendChild(atividades);
-
+        var tabela = document.createElement('table');
         
+        createTable(tabela);
+
+        dado["atividadeExtra"].forEach(atividades => {
+            var atvdNome = atividades["nome"];
+
+            var linha = document.createElement('tr');
+            var atividadeExtra = document.createElement('td');
+
+            atividadeExtra.textContent = atvdNome;
+
+            linha.appendChild(atividadeExtra);
+            tabela.appendChild(linha);
+        });   
     } else {
         var par = document.createElement("p");
         par.id = "naoEncontrado";
-        par.textContent = `Nenhum aluno foi encontrado com o nome: ${dado["nome"]}`;
+        par.textContent = `Nenhum aluno foi encontrado com o RA: ${dado["ru"]}`;
         atividade.appendChild(par);
     }
+}
+
+function createTable(tabela) {
+    var linha = document.createElement('tr');
+    var atividadeExtra = document.createElement('th');
+    atividadeExtra.textContent = `Você está matriculado nas seguintes atividades: `;
+    linha.appendChild(atividadeExtra);
+    tabela.appendChild(linha);
+    atividade.appendChild(tabela);
 }
