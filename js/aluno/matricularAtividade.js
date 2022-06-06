@@ -1,6 +1,6 @@
-var prova = document.getElementById('extra');
+var extra = document.getElementById('extra');
 var input = document.getElementById("ruAluno"); 
-var form = document.getElementById("ruAluno"); 
+var form = document.getElementById("form"); 
 var button = document.getElementById("buttonMatriculaAluno");
 var requestURL = 'https://maxel-uds.github.io/JSON-Trabalho-TES/alunoMatricula.json';
 var request = new XMLHttpRequest();
@@ -20,8 +20,8 @@ button.addEventListener("click", function(e) {
 });
 
 function getMatriculaResponse() {
-    prova.innerText = "";
-    prova.style = "border: 1px solid black;"
+    extra.innerText = "";
+    extra.style = "border: 1px solid black;"
     var ru = input.value;
 
     var dado = response.filter(dado => dado["ru"] == ru)[0];
@@ -33,9 +33,9 @@ function getMatriculaResponse() {
         createTitulo(tabela);
         createTable(tabela);
 
-        dado["atividadeExtra"].forEach(provas => {
-            var nomeAtividade = provas["nome"];
-            var codigoAtividade = provas["codigo"];
+        dado["atividadeExtra"].forEach(atividades => {
+            var nomeAtividade = atividades["nome"];
+            var codigoAtividade = atividades["codigo"];
 
             var linha = document.createElement('tr');
             var atividade = document.createElement('td');
@@ -52,19 +52,19 @@ function getMatriculaResponse() {
         }); 
         
         formMatricula.style = "display: none;"; 
-        prova.appendChild(tabela); 
+        extra.appendChild(tabela); 
 
         var botao = document.createElement('button');
         botao.className = "matricularNovamente";
         botao.textContent = "Nova Matrícula";
         botao.setAttribute("onclick", "matricularNovamente()");
-        prova.appendChild(botao);
+        extra.appendChild(botao);
 
     } else {
         var par = document.createElement("p");
         par.id = "naoEncontrado";
         par.textContent = `Nenhum aluno foi encontrado com o RA: ${dado["ru"]}`;
-        prova.appendChild(par);
+        extra.appendChild(par);
     }
 }
 
@@ -89,7 +89,7 @@ function createTable(tabela) {
     linha.appendChild(materia);
     linha.appendChild(data);
     tabela.appendChild(linha);
-    prova.appendChild(tabela);
+    extra.appendChild(tabela);
 }
 
 function matricularNovamente() {

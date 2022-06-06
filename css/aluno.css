@@ -76,7 +76,7 @@ p{
 
 /* Estilo de página de consultas */
 
-#prova, #atividade, #aulas, #notasTurma, #frequenciaTurma, #atividadeExtra {
+#prova, #atividade, #aulas, #atualizar, #notasTurma, #frequenciaTurma, #atividadeExtra {
     margin-top: 10px;
     min-width: 400px;
     width: 29%; 

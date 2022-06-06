@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/aluno.css">
+    <script src="../../js/aluno/atualizarDados.js" defer="defer"></script>
     <title>Acadêmico</title>
 </head>
 <body>
@@ -20,22 +21,27 @@
         </ul>
     </nav>
 
-    <form class="form">
+    <form class="form" id="formAtualizar">
         <fieldset>
         <legend>Atualizar dados de contato</legend>
         <div>
+            <b><label for="ra">Digite seu RA:</label></b><br>
+            <input type="number" name="ra" id="ru" required>
+        </div>
+        <div>
             <label for="email">Digite seu novo email:</label><br>
-            <input type="email" name="email" required>
+            <input type="email" name="email" id="email" required>
         </div>
         <div>
             <label for="nome">Digite o nome como quer ser chamada (o):</label><br>
-            <input type="text" name="nome" required>
+            <input type="text" name="nome" id="nome" required>
         </div>
-        </fieldset>
         <p>
-            <button class="buttonConsulta" type="submit">Enviar</button>
-        </p>    
+            <input class="inputConsulta" type="submit" id="buttonAtualizarDados" onclick="getAtualizarDados()">
+        </p>  
+        </fieldset>
     </form>
 
+    <div id="atualizar"></div>
 </body>
 </html>
