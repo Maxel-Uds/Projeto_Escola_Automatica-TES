@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/aluno.css">
+    <script src="../../js/aluno/matricularAtividade.js" defer="defer"></script>
     <title>Acadêmico</title>
 </head>
 <body>
@@ -22,12 +23,7 @@
 
     <form id="formMatricula" class="form">      
       <fieldset>     
-        <label for="nomeAluno">Digite seu RA:</label><br>
-        <input type="text" name="raAluno" required ">
-
-        <legend>Escolha atividades extras</legend>
-          <div>
-            <br>
+      <legend>Escolha as atividades nas quais deseja se matricular: </legend>
             <div class="atividades">
               <label>Música</label>
               <input type="checkbox" value="1">
@@ -60,11 +56,18 @@
               <label>Ginástica</label>
               <input type="checkbox" value="8">
             </div>
+
+          <div style="margin-top: 10px;">
+            <label for="nomeAluno">Digite seu RA:</label><br>
+            <input type="number" name="ruAluno" required id="ruAluno">
           </div>
           <p>
-            <input id="button" type="submit" value="Matricular" onclick="getMatriculaResponse()" disabled>
+            <input id="buttonMatriculaAluno" type="submit" value="Matricular" onclick="getMatriculaResponse()">
           </p>
       </fieldset>
+      
     </form>
+
+    <div id="extra"></div>
 </body>
 </html>

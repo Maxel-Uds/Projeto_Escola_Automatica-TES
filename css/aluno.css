@@ -44,7 +44,7 @@
 }
 
 .form fieldset {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 20px;
     text-align: center;
     width: 40%;
@@ -70,12 +70,13 @@ input{
 }
 
 p{
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 /* Estilo de página de consultas */
 
-#provas, #atividade, #aulas, #notasTurma, #frequenciaTurma, #atividadeExtra {
+#prova, #atividade, #aulas, #notasTurma, #frequenciaTurma, #atividadeExtra {
     margin-top: 10px;
     min-width: 400px;
     width: 29%; 
@@ -112,7 +113,7 @@ table, th, td {
     font-size: 20px;
 }
 
-/*estilo página de matricula */
+/*estilo página de matricula aluno*/
 
 #formMatricula{
     margin-top: 10px;
@@ -121,6 +122,8 @@ table, th, td {
 }
 
 .atividades{
+    border: 1px solid black;
+    margin-top: 20px;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -132,3 +135,12 @@ table, th, td {
     padding: 2px;
 }
 
+/*estilo página de matricula atividades extras*/
+
+#extra{
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+}
