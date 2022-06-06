@@ -28,6 +28,7 @@ function getProva() {
     if(dado) {
         var tabela = document.createElement('table');
         
+        createTitulo(tabela);
         createTable(tabela);
 
         dado["materias"].forEach(provas => {
@@ -51,6 +52,18 @@ function getProva() {
         par.textContent = `Nenhum aluno foi encontrado com o RA: ${dado["ru"]}`;
         prova.appendChild(par);
     }
+}
+
+function createTitulo(tabela) {
+    var linha = document.createElement('tr');
+    var titulo = document.createElement('th');
+
+    titulo.colSpan = 2;
+    titulo.textContent = "Você tem provas nos seguintes dias: ";
+    titulo.className = "titulo";
+    
+    linha.appendChild(titulo)
+    tabela.appendChild(linha);
 }
 
 function createTable(tabela) {

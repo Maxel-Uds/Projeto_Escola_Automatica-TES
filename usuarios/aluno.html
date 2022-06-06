@@ -24,66 +24,35 @@
         <li><a href="financeiro.html">Financeiro</a></li>
       </ul>
     </nav>
-
-
 <div class="center">
-
   <div class="alunoDiv">
     <h1 class="title">Área do Aluno</h1>
     <ul class="center">
         <li >
           <a class="center alunoAncor" href="alunoPages/academicoAluno.html">Consulas Acadêmicas</a>
-        </li>
-
-        <br>
-
+        </li><br>
         <li>
           <a class="center alunoAncor" href="alunoPages/atividadesExtras.html">Matrícula de atividades extras</a>
+        </li><br>
+        <li>
+          <a class="center alunoAncor" href="alunoPages/atualizarDados.html">Atualizar dados de contato</a>
         </li>
-    </ul>
-
-    <br>
+    </ul><br>
   </div>
-
-  <div class="alunoDiv">
-    <h2>Dúvidas?...
-      <br>
-      Entre em contato com o professor
-    </h2>
-    <form action="mensagem.php" method="post">
-      <p>
+  <div class="alunoDiv"><br>
+    <h2>Dúvidas?...<br>
+    Entre em contato com o professor!
+    </h2><br>
+    
+    <form>
+      <div>
           <label for="aluno">Digite sua mensagem: </label><br>
           <textarea type="text" name="aluno" rows="10" cols="70" required></textarea>
-      </p>
-      <p> 
-          <button type="submit" name="aluno">Enviar</button>
-      </p>
+      </div>
+      <button type="submit" name="aluno">Enviar</button>
+      <p>Assim que o professor responder você será notificado!</p>
     </form>
-
-    <div class="atualizar">
-      <form class="form" action="" method="post">
-          <fieldset>
-          <legend>Atualizar dados de contato</legend>
-          <div>
-              <label for="email">Digite seu novo email:</label><br>
-              <input type="email" name="email" required>
-          </div>
-  
-          <div>
-              <label for="nome">Digite o nome como quer ser chamada (o):</label><br>
-              <input type="text" name="nome" required>
-          </div>
-          </fieldset>
-  
-          <p>
-            <button type="submit" name="aluno">Enviar</button>
-          </p>
-      </form>
-  </div>
-</body>
-    <p>Assim que o professor responder você será notificado!</p>
-  </div>
+    
 </div>
-
 </body>
 </html>

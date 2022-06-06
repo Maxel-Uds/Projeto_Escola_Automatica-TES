@@ -9,6 +9,16 @@
     font-size: 25px;
 }
 
+.formAluno{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+}
+
+.titulo {
+    text-align: center;
+}
+
 .alunoAncor:hover  {
     background-color: white;
     color: black;
@@ -28,7 +38,6 @@
     text-align: center;
   }
 
-
 .form {
     margin-left: 37.5%;
     margin-top: 20px;
@@ -40,11 +49,6 @@
     text-align: center;
     width: 40%;
 }
-
-.form legend {
-    padding: 5px
-}
-
 
 .button {
     margin-top: 10px;
@@ -79,16 +83,6 @@ p{
     margin-right: auto;
 }
 
-#provas {
-    max-height: 515px;
-    min-height: 50px;
-    padding: 20px;
-}
-
-#provas p {
-    padding: 5px;
-}
-
 table {
     border-collapse: collapse;
     width: 100%;
@@ -117,3 +111,24 @@ table, th, td {
     color: red;
     font-size: 20px;
 }
+
+/*estilo página de matricula */
+
+#formMatricula{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.atividades{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#button {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 40%;
+    padding: 2px;
+}
+

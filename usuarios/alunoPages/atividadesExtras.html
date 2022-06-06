@@ -20,36 +20,51 @@
         </ul>
     </nav>
 
-    <form class="formAcademico" action="" method="post">
-      <h2>
+    <form id="formMatricula" class="form">      
+      <fieldset>     
         <label for="nomeAluno">Digite seu RA:</label><br>
         <input type="text" name="raAluno" required ">
-      </h2>  
-      
-      <h2>
-          <form class="form" action="" method="post"> 
-            <fieldset class="consulta">
-                <label for="nomeAluno">Escolha a atividade extra na qual você deseja se matricular:</label><br>
-                <select>
-                    <option value="mus">Música</option>
-                    <option value="danca">Dança</option>
-                    <option value="frances">Francês</option>
-                    <option value="culi">Culinária</option>
-                    <option value="comp">Computação</option>
-                    <option value="nata">Natação</option>
-                    <option value="fina">Educação Financeira</option>
-                    <option value="gin">Ginástica</option>
-                </select>
-            </fieldset>
 
-            <p>
-              <input class="button" type="submit" name="atividade" value="Matricular">
-            </p>
-
-        </form>
-      </h2>
-
-
+        <legend>Escolha atividades extras</legend>
+          <div>
+            <br>
+            <div class="atividades">
+              <label>Música</label>
+              <input type="checkbox" value="1">
+            </div>
+            <div class="atividades">
+              <label>Dança</label>
+              <input type="checkbox" value="2">
+            </div>
+            <div class="atividades">
+              <label>Francês</label><br>
+              <input type="checkbox" value="3">
+            </div>
+            <div class="atividades">
+              <label>Culinária</label>
+              <input type="checkbox" value="4">
+            </div>
+            <div class="atividades">
+              <label>Computação</label>
+              <input type="checkbox" value="5">
+            </div>
+            <div class="atividades">
+              <label>Natação</label><br>
+              <input type="checkbox" value="6">
+            </div>
+            <div class="atividades">
+              <label>Educação Financeira</label>
+              <input type="checkbox" value="7"> 
+            </div>
+            <div class="atividades">
+              <label>Ginástica</label>
+              <input type="checkbox" value="8">
+            </div>
+          </div>
+          <p>
+            <input id="button" type="submit" value="Matricular" onclick="getMatriculaResponse()" disabled>
+          </p>
+      </fieldset>
     </form>
 </body>
 </html>

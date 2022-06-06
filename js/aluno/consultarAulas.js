@@ -38,14 +38,4 @@ function getAulas() {
     }
 }
 
-function createTable(tabela) {
-    var linha = document.createElement('tr');
-    var materia = document.createElement('th');
-    var data = document.createElement('th');
-    materia.textContent = `Matéria`;
-    data.textContent = `Data`;
-    linha.appendChild(materia);
-    linha.appendChild(data);
-    tabela.appendChild(linha);
-    prova.appendChild(tabela);
-}
+
