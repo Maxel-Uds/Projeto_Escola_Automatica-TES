@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/professor.css">
+    <script src="../../js/professor/consultarProvas.js" defer="defer"></script>
     <title>Acadêmico</title>
 </head>
 <body>
@@ -23,19 +24,23 @@
       <form class="form" action="" method="post">
         <h2 class="title">Cadastro - Agenda de provas</h2>
           <div>
-              <label for="dia">Digite o dia da prova:</label><br>
-              <input type="dia" name="dia" required>
+              <label for="idDia">Digite o dia da prova:</label><br>
+              <input type="number" name="idDia" id="idDia" required>
           </div>
           <div>
-              <label for="mensagem">Digite a matéria e conteúdo da prova:</label><br>
-              <input type="text" name="materia">
+              <label for="materia">Digite a matéria da prova:</label><br>
+              <input type="text" name="materia" id="materia">
           </div>
           <div>
-            <label for="mensagem">Digite o título da prova:</label><br>
-            <input type="text" name="mensagem">
+            <label for="titulo">Digite o título da prova:</label><br>
+            <input type="text" name="titulo" id="titulo">
         </div>
-          <input class="button" type="submit" name="conteudoalunos" value="Enviar">
+        <p>
+          <input id="button" type="submit" name="button" value="Enviar" onclick="getProvas()">
+        </p>
+          
       </form>
-  </div>    
+  </div>   
+  <div id="resposta"></div> 
 </body>
 </html>
