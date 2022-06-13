@@ -27,10 +27,6 @@ function getProvas() {
 
     var dado = response.filter(dado => dado['ru'] == ru)[0];
 
-    /*var diaProva = document.createElement('p');
-    diaProva.textContent = `Dia da Prova: ${dado['diaProva']}`;
-    resposta.appendChild(diaProva);*/
-
     var materia = document.createElement('p');
     materia.textContent = `Materia da Prova: ${dado['materia']}`;
     resposta.appendChild(materia);

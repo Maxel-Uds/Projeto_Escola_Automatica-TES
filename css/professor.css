@@ -89,6 +89,15 @@ input:hover{
 .faltas li{
     border-bottom: 1px solid #545454;
 }
+.relatorio {
+    height: 600px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.relatorio li{
+    border-bottom: 1px solid #545454;
+}
 
 .chat{
     height: 570px;
