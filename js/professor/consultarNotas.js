@@ -28,8 +28,8 @@ function getNotas() {
 
     var dado = response.filter(dado => dado['ru'] == ru)[0];
 
-    
-    var nome = document.createElement('p');
+if(dado) {
+     var nome = document.createElement('p');
     nome.textContent = `Nome do Aluno: ${dado['nome']}`;
     resposta.appendChild(nome);
 
@@ -41,7 +41,10 @@ function getNotas() {
     nota.textContent = `Nota: ${dado['nota']}` ;
     resposta.appendChild(nota);
 
-    
-
+} else {
+    var error = document.createElement("p");
+    error.textContent = `Nenhuma nota ou dado foi encontrado.`;
+    resposta.appendChild(error); 
+}
 
 }

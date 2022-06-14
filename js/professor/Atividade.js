@@ -27,12 +27,20 @@ function getAtividades() {
 
     var dado = response.filter(dado => dado['ru'] == ru)[0];
 
-    var email = document.createElement('p');
+    if(dado) {
+      var email = document.createElement('p');
     email.textContent = `Email do Aluno: ${dado['email']}`;
     resposta.appendChild(email);
 
     var atiExtra = document.createElement('p');
     atiExtra.textContent = `Atividade Extra: ${dado['atiExtra']}`;
-    resposta.appendChild(atiExtra);
+    resposta.appendChild(atiExtra); 
+
+    } else {
+    var error = document.createElement("p");
+    error.textContent = `Desculpe houve um erro no sistema e nao foi possivel cadastrar a atividade. Tente novamente mais tarde.`;
+    resposta.appendChild(error);
+    }
+    
 
 }
