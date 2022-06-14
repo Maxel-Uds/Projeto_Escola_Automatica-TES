@@ -23,6 +23,8 @@ function getFaltas() {
     resposta.style = "border: 1px solid black;";
     resposta.style = "text-align: center";
     
+
+    
     var ru = input.value;
 
     var dado = response.filter(dado => dado["ru"] == ru)[0];
