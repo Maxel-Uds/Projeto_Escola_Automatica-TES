@@ -26,23 +26,27 @@ function getAtualizarDados() {
     var ru = input.value;
 
     var dado = response.filter(dado => dado["ru"] == ru)[0];
-    console.log(dado)
 
     if(dado) {
-        var tabela = document.createElement('table');
-        
-        createTitulo(tabela);
-        createTable(tabela);
+            var tabela = document.createElement('table');
+            
+            createTitulo(tabela);
+            createTable(tabela);
         
             var nomeAluno = dado["nome"];
+            var emailAluno = dado["email"];
+
+            console.log(emailAluno)
 
             var linha = document.createElement('tr');
             var nomeLinha = document.createElement('td');
+            var emailLinha = document.createElement('td');
   
-
             nomeLinha.textContent = nomeAluno;
+            emailLinha.textContent = emailAluno;
 
             linha.appendChild(nomeLinha);
+            linha.appendChild(emailLinha);
             tabela.appendChild(linha);
         
             atualizar.appendChild(tabela); 
@@ -69,9 +73,12 @@ function createTitulo(tabela) {
 
 function createTable(tabela) {
     var linha = document.createElement('tr');
-    var materia = document.createElement('th');
-    materia.textContent = `Novo Nome`;
-    linha.appendChild(materia);
+    var nome = document.createElement('th');
+    var email = document.createElement('th');
+    nome.textContent = `Novo Nome`;
+    email.textContent = `Novo email`;
+    linha.appendChild(nome);
+    linha.appendChild(email);
     tabela.appendChild(linha);
     atualizar.appendChild(tabela);
 }
