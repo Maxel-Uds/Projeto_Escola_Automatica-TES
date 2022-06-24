@@ -25,17 +25,56 @@ function getAulas() {
     var dado = response.filter(dado => dado["ru"] == ru)[0];
 
     if(dado) {
-        var datas = document.createElement('p');
-        datas.textContent = `Você tem aulas nos dias: ${dado[""]}`;
-        aulas.appendChild(datas);
-
+        var tabela = document.createElement('table');
         
+        createTitulo(tabela);
+        createTable(tabela);
+    
+        dado["materias"].forEach(materia => {
+            var linha = document.createElement('tr');
+            var datas = document.createElement('td');
+            var materias = document.createElement('td');
+
+            var materiaNome = materia["nome"]
+            var dia = materia["dias"]
+        
+            materias.textContent = materiaNome
+            datas.textContent = dia
+
+            linha.appendChild(materias)
+            linha.appendChild(datas)
+            tabela.appendChild(linha);
+        }); 
     } else {
         var par = document.createElement("p");
         par.id = "naoEncontrado";
         par.textContent = `Nenhum aluno foi encontrado com o nome: ${dado["nome"]}`;
         aulas.appendChild(par);
     }
+}
+
+function createTitulo(tabela) {
+    var linha = document.createElement('tr');
+    var titulo = document.createElement('th');
+
+    titulo.colSpan = 2;
+    titulo.textContent = "Você tem aulas nos seguintes dias: ";
+    titulo.className = "titulo";
+    
+    linha.appendChild(titulo)
+    tabela.appendChild(linha);
+}
+
+function createTable(tabela) {
+    var linha = document.createElement('tr');
+    var materia = document.createElement('th');
+    var data = document.createElement('th');
+    materia.textContent = `Matéria`;
+    data.textContent = `Data`;
+    linha.appendChild(materia);
+    linha.appendChild(data);
+    tabela.appendChild(linha);
+    aulas.appendChild(tabela);
 }
 
 
