@@ -27,9 +27,7 @@ function getProvas() {
 
     var dado = response.filter(dado => dado['ru'] == ru)[0];
 
-    /*var diaProva = document.createElement('p');
-    diaProva.textContent = `Dia da Prova: ${dado['diaProva']}`;
-    resposta.appendChild(diaProva);*/
+    if(dado) {
 
     var materia = document.createElement('p');
     materia.textContent = `Materia da Prova: ${dado['materia']}`;
@@ -38,6 +36,15 @@ function getProvas() {
     var titulo = document.createElement('p');
     titulo.textContent = `Titulo da Prova: ${dado['titulo']}`;
     resposta.appendChild(titulo);
+
+    } else {
+        var error = document.createElement("p");
+        error.textContent = `Nenhuma Prova esta agendada para esse dia.`;
+        resposta.appendChild(error);
+    }
+   
+
+
 
 
 
