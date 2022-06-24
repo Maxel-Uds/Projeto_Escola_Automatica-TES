@@ -80,15 +80,63 @@ input:hover{
     
 }
 
+.button{
+    margin-top: 30px;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+}
+
+.button:hover{
+    transition: all 0.5s;
+    background: linear-gradient(#042d04, #154a15);
+    color: white;
+    font-size: 18px;
+    
+}
+
 .faltas {
     height: 600px;
     text-align: left;
-    font-size: 18px;
-}
-
-.faltas li{
-    border-bottom: 1px solid #545454;
-}
+    elatorio {
+        height: 600px;
+        text-align: left;
+        font-size: 18px;
+    }
+    
+    .relatorio li{
+        border-bottom: 1px solid #545454;
+    }
+    
+    .chat{
+        height: 570px;
+    }
+    
+    .assunt{
+        margin-bottom: 20px;
+    }
+    
+    textarea{
+        height: 200px;
+        width: 300px;
+        margin-top: 5px;
+        padding: 5px;
+    }
+    
+    #resposta, #notas {
+        height: 200px;
+        width: 100;
+        background: linear-gradient(#ffffff, #65a065, #ffffff);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ffffff;
+    }
+    
 .relatorio {
     height: 600px;
     text-align: left;
@@ -112,4 +160,16 @@ textarea{
     width: 300px;
     margin-top: 5px;
     padding: 5px;
+}
+
+#resposta, #notas {
+    height: 200px;
+    width: 100;
+    background: linear-gradient(#ffffff, #65a065, #ffffff);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffffff;
 }
